@@ -2,18 +2,52 @@ package org.example;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Lit {
     private int tarifJour;
+    private Chambre chambre;
     private Patient patient;
+    private ArrayList<Patient> historiquePatient = new ArrayList<Patient>();
 
-    public Lit(int tarif) {
+    public Lit(int tarif, Chambre chambre) {
         this.tarifJour = tarif;
+        this.chambre = chambre;
+    }
+
+    public boolean litIsEmplty() {
+        return patient == null;
     }
 
     public int getTarifJour() {
         return tarifJour;
+    }
+
+    public void addPatientToLit(Patient p) {
+        if (patient != null){
+            throw new IllegalArgumentException("lit deja occupe");
+        }
+        patient = p;
+        historiquePatient.add(p);
+    }
+
+
+
+    public String removePatient() {
+
+
+        patient = null;
+    }
+
+    public int getTarif() {
+        LocalDateTime Temps = LocalDateTime.now();
+        int tarifTemp =  (int) (tarifJour * ChronoUnit.DAYS.between(Temps, patient.getHeureArrive()));
+        if (chambre.getNbrLit() != patient.getSouhaitChambre() || patient.getSouhaitChambre() == 2) {
+            tarifTemp = tarifTemp/2;
+        }
+
+        return tarifTemp + 10;
     }
 
     public abstract long tempsOccupationMax();

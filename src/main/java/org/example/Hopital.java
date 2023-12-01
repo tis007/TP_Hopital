@@ -8,6 +8,17 @@ public class Hopital {
     public Hopital() {
     }
 
+    public boolean addPatient(int numSecuriteSocial,String nom, int souhaitChambre , int numService) {
+        Patient p = new Patient(numSecuriteSocial,nom,souhaitChambre,numService, this);
+        for (Service s : services){
+            if (s.getNumService() == numService) {
+                s.addPatient(p);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addService(Service service){
         if (this.services.size() > 9) {
             throw new IllegalArgumentException("Can't add more services");

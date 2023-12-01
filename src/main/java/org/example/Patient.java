@@ -14,12 +14,30 @@ public class Patient {
     private ArrayList<Chambre> chambres;
     private Service service;
     private Chambre c;
-    public Patient(int numSecuriteSocial,String nom, int souhaitChambre , int numService){
+    private int facture = 0;
+    private Hopital hopital;
+
+    public Patient(int numSecuriteSocial,String nom, int souhaitChambre , int numService, Hopital hopital){
+        if (souhaitChambre>2 || souhaitChambre<=0){
+            throw new IllegalArgumentException("Chambre souhaite n'existe pas");
+        }
         this.nom = nom;
         this.numSecuriteSocial = numSecuriteSocial;
         this.souhaitChambre = souhaitChambre;
         this.numService = numService;
         heureArrive = LocalDateTime.now();
+        this.hopital = hopital;
+
+
+    }
+
+    public int getSouhaitChambre() {
+        return souhaitChambre;
+    }
+
+    public void partirChambre(){
+        //TODO : implet
+        throw new UnsupportedOperationException();
     }
 
     public LocalDateTime getHeureArrive() {

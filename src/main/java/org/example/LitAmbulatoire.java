@@ -5,8 +5,8 @@ import jdk.jshell.spi.ExecutionControl;
 import java.util.Date;
 
 public class LitAmbulatoire extends Lit{
-    public LitAmbulatoire(int tarif) {
-        super(tarif);
+    public LitAmbulatoire(int tarif, Chambre c) {
+        super(tarif, c);
     }
 
     @Override

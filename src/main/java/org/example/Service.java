@@ -39,6 +39,14 @@ public class Service {
         return nbrLit;
     }
 
+    public void addPatient(Patient p ) {
+        for (Chambre c : chambres) {
+            if(c.havePlace()){
+                c.addPatient(p);
+            }
+        }
+    }
+
     public String getNomService() {
         return nomService;
     }

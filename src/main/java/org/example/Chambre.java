@@ -16,16 +16,33 @@ public class Chambre {
         lits = new ArrayList<>();
         for (int i = 0; i < nbrLit; i++) {
             if (litType instanceof LitAmbulatoire) {
-                lits.add(new LitAmbulatoire((15 * 2) / nbrLit));
+                lits.add(new LitAmbulatoire((15 * 2) / nbrLit, this));
             }
             if (litType instanceof LitMoyenSejour) {
-                lits.add(new LitMoyenSejour((20 * 2) / nbrLit));
+                lits.add(new LitMoyenSejour((20 * 2) / nbrLit, this));
             }
             if (litType instanceof LitLongSejour) {
-                lits.add(new LitLongSejour((25 * 2) / nbrLit));
+                lits.add(new LitLongSejour((25 * 2) / nbrLit, this));
             }
         }
+    }
 
+    public void addPatient(Patient p) {
+        for (Lit l : lits) {
+            if (l.litIsEmplty()) {
+                l.addPatientToLit(p);
+                break;
+            }
+        }
+    }
+
+    public boolean havePlace() {
+        for (Lit l : lits) {
+            if (l.litIsEmplty()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int getNumChambre() {

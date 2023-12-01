@@ -2,8 +2,8 @@ package org.example;
 
 public class LitMoyenSejour extends Lit {
 
-    public LitMoyenSejour(int tarif) {
-        super(tarif);
+    public LitMoyenSejour(int tarif, Chambre c) {
+        super(tarif, c);
     }
 
     @Override
