@@ -74,4 +74,11 @@ public class Hopital {
         }
            return ret.toString();
     }
+    public ArrayList<Lit> listTempsDepasse(){
+        ArrayList<Lit> listTempsDepasse = new ArrayList<Lit>();
+        for (Service s : services){
+            listTempsDepasse.addAll(s.tempsDepasse());
+        }
+        return listTempsDepasse;
+    }
 }

@@ -90,7 +90,7 @@ public class Service {
         }
         return ret.toString();
     }
-    public ArrayList<Lit> listTempsDepasse(){
+    public ArrayList<Lit> tempsDepasse(){
         ArrayList<Lit> listLitTempsDepasse = new ArrayList<Lit>();
         for(Chambre c : chambres){
             listLitTempsDepasse.addAll(c.tempsDepasse());
