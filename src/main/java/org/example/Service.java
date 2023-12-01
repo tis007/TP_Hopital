@@ -26,6 +26,19 @@ public class Service {
         }
     }
 
+    public int nbrChambreOccupe() {
+        //TODO : implement method
+        throw new UnsupportedOperationException();
+    }
+
+    public int nbrLitTot(){
+        int nbrLit = 0;
+        for (Chambre c : chambres) {
+            nbrLit += c.getNbrLit();
+        }
+        return nbrLit;
+    }
+
     public String getNomService() {
         return nomService;
     }
@@ -42,13 +55,20 @@ public class Service {
         return chambres;
     }
 
+    public Lit getLitType() {
+        return litType;
+    }
+
     @Override
     public String toString() {
-        return
-                "\n     nomService='" + nomService +
-                "\n     numService=" + numService +
-                "\n     nbrChambres=" + nbrChambres +
-                "\n     chambres=" + chambres +
-                "\n     litType=" + litType;
+        StringBuilder ret =
+                new StringBuilder("\n     nomService='" + nomService + "'"+
+                        "\n     numService=" + numService +
+                        "\n     nbrChambres=" + nbrChambres +
+                        "\n     litType=" + litType.getClass().getName());
+        for (Chambre c : chambres) {
+            ret.append("\n          ").append(c);
+        }
+        return ret.toString();
     }
 }

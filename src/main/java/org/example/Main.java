@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Hopital hopital = new Hopital();
         hopital.addService(new Service("Radiologie", 2, new LitAmbulatoire(0)));
-
+        System.out.println(hopital);
 
     }
 }

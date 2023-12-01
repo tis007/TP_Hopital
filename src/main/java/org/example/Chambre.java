@@ -35,4 +35,13 @@ public class Chambre {
     public int getNbrLit() {
         return nbrLit;
     }
+
+    @Override
+    public String toString() {
+        return "Chambre{" +
+                "numChambre=" + numChambre +
+                ", nbrLit=" + nbrLit +
+                ", lits=" + lits +
+                '}';
+    }
 }

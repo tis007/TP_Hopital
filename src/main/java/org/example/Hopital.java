@@ -15,6 +15,17 @@ public class Hopital {
         services.add(service);
     }
 
+    public double getTauxOccupationLit(Lit lit) {
+        int nbrLitTot = 0;
+        int nbrLitOccupe = 0;
+        for (Service s : services) {
+            if (lit.getClass().getName().equals(s.getLitType().getClass().getName())) {
+                nbrLitTot += s.nbrLitTot();
+            }
+        }
+        throw  new UnsupportedOperationException();
+    }
+
     public Hopital(ArrayList<Service> services) {
         this.services = services;
     }
