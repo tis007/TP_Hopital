@@ -42,7 +42,7 @@ public abstract class Lit {
 
     public int getTarif() {
         LocalDateTime Temps = LocalDateTime.now();
-        int tarifTemp =  (int) (tarifJour * ChronoUnit.DAYS.between(Temps, patient.getHeureArrive()));
+        int tarifTemp =  (int) (tarifJour * (ChronoUnit.DAYS.between(Temps, patient.getHeureArrive()) + 1));
         if (chambre.getNbrLit() != patient.getSouhaitChambre() || patient.getSouhaitChambre() == 2) {
             tarifTemp = tarifTemp/2;
         }

@@ -39,6 +39,14 @@ public class Patient {
         facture += lit.removePatient();
     }
 
+    public int getFacture(){
+        return facture;
+    }
+
+    public int getNumService() {
+        return numService;
+    }
+
     public LocalDateTime getHeureArrive() {
         return heureArrive;
     }

@@ -40,9 +40,19 @@ public class Service {
     }
 
     public void addPatient(Patient p ) {
+        boolean isAdded = false;
         for (Chambre c : chambres) {
-            if(c.havePlace()){
+            if(c.havePlace() && c.getNbrLit() == p.getSouhaitChambre() && !isAdded){
                 c.addPatient(p);
+                isAdded = true;
+            }
+        }
+        if (!isAdded) {
+            for (Chambre c : chambres) {
+                if(c.havePlace() && !isAdded){
+                    c.addPatient(p);
+                    isAdded = true;
+                }
             }
         }
     }

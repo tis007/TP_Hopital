@@ -10,13 +10,22 @@ public class Hopital {
 
     public boolean addPatient(int numSecuriteSocial,String nom, int souhaitChambre , int numService) {
         Patient p = new Patient(numSecuriteSocial,nom,souhaitChambre,numService, this);
+        return addPatient(p);
+    }
+
+    public boolean addPatient(Patient p) {
         for (Service s : services){
-            if (s.getNumService() == numService) {
+            if (s.getNumService() == p.getNumService()) {
                 s.addPatient(p);
                 return true;
             }
         }
         return false;
+    }
+
+    public String removePatient(Patient p) {
+        p.partirChambre();
+        return "La facture est de : " + p.getFacture();
     }
 
     public void addService(Service service){

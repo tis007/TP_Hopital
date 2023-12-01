@@ -28,11 +28,12 @@ public class Chambre {
     }
 
     public void addPatient(Patient p) {
+        boolean isAdded = false;
         for (Lit l : lits) {
-            if (l.litIsEmplty()) {
+            if (l.litIsEmplty() && !isAdded) {
                 l.addPatientToLit(p);
                 p.addLit(l);
-                break;
+                isAdded = true;
             }
         }
     }
