@@ -25,13 +25,12 @@ public abstract class Lit {
     }
 
     public void addPatientToLit(Patient p) {
-        if (patient != null){
+        if (patient != null) {
             throw new IllegalArgumentException("lit deja occupe");
         }
         patient = p;
         historiquePatient.add(p);
     }
-
 
 
     public int removePatient() {
@@ -42,9 +41,10 @@ public abstract class Lit {
 
     public int getTarif() {
         LocalDateTime Temps = LocalDateTime.now();
-        int tarifTemp =  (int) (tarifJour * (ChronoUnit.DAYS.between(Temps, patient.getHeureArrive()) + 1));
+        System.out.println(ChronoUnit.SECONDS.between(patient.getHeureArrive(), Temps));
+        int tarifTemp = (int) (tarifJour * (ChronoUnit.SECONDS.between(patient.getHeureArrive(), Temps) + 1));
         if (chambre.getNbrLit() != patient.getSouhaitChambre() || patient.getSouhaitChambre() == 2) {
-            tarifTemp = tarifTemp/2;
+            tarifTemp = tarifTemp / 2;
         }
 
         return tarifTemp + 10;
@@ -52,11 +52,13 @@ public abstract class Lit {
 
     public abstract long tempsOccupationMax();
 
-    public boolean tempsDepasser(){
+    public boolean tempsDepasser() {
         boolean result = true;
         LocalDateTime Temps = LocalDateTime.now();
-        if (ChronoUnit.SECONDS.between(Temps, patient.getHeureArrive()) >= this.tempsOccupationMax()){
-            result = false;
+        if (patient != null) {
+            if (ChronoUnit.SECONDS.between(patient.getHeureArrive(), Temps) >= this.tempsOccupationMax()) {
+                result = false;
+            }
         }
         return result;
     }

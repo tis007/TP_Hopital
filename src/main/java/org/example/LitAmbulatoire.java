@@ -11,6 +11,6 @@ public class LitAmbulatoire extends Lit{
 
     @Override
     public long tempsOccupationMax() {
-        return 86400;
+        return /*86400*/ 1;
     }
 }

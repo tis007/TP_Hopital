@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Hopital {
 
     private ArrayList<Service> services = new ArrayList<Service>();
+    private int scenario = 1;
     public Hopital() {
     }
 

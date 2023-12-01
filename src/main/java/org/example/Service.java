@@ -27,11 +27,6 @@ public class Service {
         }
     }
 
-    public int nbrChambreOccupe() {
-        //TODO : implement method
-        throw new UnsupportedOperationException();
-    }
-
     public int nbrLitTot(){
         int nbrLit = 0;
         for (Chambre c : chambres) {

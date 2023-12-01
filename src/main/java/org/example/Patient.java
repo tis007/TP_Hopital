@@ -23,7 +23,7 @@ public class Patient {
         this.numSecuriteSocial = numSecuriteSocial;
         this.souhaitChambre = souhaitChambre;
         this.numService = numService;
-        heureArrive = LocalDateTime.now();
+        this.heureArrive = LocalDateTime.now();
         this.hopital = hopital;
     }
 
