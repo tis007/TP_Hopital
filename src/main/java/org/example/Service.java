@@ -38,6 +38,10 @@ public class Service {
         return nbrChambres;
     }
 
+    public ArrayList<Chambre> getChambres() {
+        return chambres;
+    }
+
     @Override
     public String toString() {
         return

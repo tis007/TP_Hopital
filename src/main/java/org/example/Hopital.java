@@ -19,6 +19,10 @@ public class Hopital {
         this.services = services;
     }
 
+    public ArrayList<Service> getServices() {
+        return services;
+    }
+
     @Override
     public String toString() {
         StringBuilder ret = new StringBuilder("Hopital \n");
