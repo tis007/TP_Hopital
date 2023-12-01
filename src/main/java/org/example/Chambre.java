@@ -31,6 +31,7 @@ public class Chambre {
         for (Lit l : lits) {
             if (l.litIsEmplty()) {
                 l.addPatientToLit(p);
+                p.addLit(l);
                 break;
             }
         }

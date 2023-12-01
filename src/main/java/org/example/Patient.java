@@ -11,9 +11,7 @@ public class Patient {
     private int souhaitChambre;
     private int numService;
     private LocalDateTime heureArrive;
-    private ArrayList<Chambre> chambres;
-    private Service service;
-    private Chambre c;
+    private Lit lit;
     private int facture = 0;
     private Hopital hopital;
 
@@ -27,8 +25,10 @@ public class Patient {
         this.numService = numService;
         heureArrive = LocalDateTime.now();
         this.hopital = hopital;
+    }
 
-
+    public void addLit(Lit lit){
+        this.lit = lit;
     }
 
     public int getSouhaitChambre() {
@@ -36,11 +36,20 @@ public class Patient {
     }
 
     public void partirChambre(){
-        //TODO : implet
-        throw new UnsupportedOperationException();
+        facture += lit.removePatient();
     }
 
     public LocalDateTime getHeureArrive() {
         return heureArrive;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "numSecuriteSocial=" + numSecuriteSocial +
+                ", nom='" + nom + '\'' +
+                ", numService=" + numService +
+                ", facture=" + facture +
+                '}';
     }
 }

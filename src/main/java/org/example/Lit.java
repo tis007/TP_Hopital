@@ -34,10 +34,10 @@ public abstract class Lit {
 
 
 
-    public String removePatient() {
-
-
+    public int removePatient() {
+        int retTarif = getTarif();
         patient = null;
+        return retTarif;
     }
 
     public int getTarif() {
@@ -59,6 +59,13 @@ public abstract class Lit {
             result = false;
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Lit{" +
+                "patient=" + patient +
+                '}';
     }
 }
 
