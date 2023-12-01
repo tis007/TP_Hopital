@@ -21,4 +21,8 @@ public class Patient {
         this.numService = numService;
         heureArrive = LocalDateTime.now();
     }
+
+    public LocalDateTime getHeureArrive() {
+        return heureArrive;
+    }
 }

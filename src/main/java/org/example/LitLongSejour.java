@@ -8,8 +8,7 @@ public class LitLongSejour extends Lit{
     }
 
     @Override
-    public int tempsOccupationMax() {
-        //TODO implement methode
-        throw new UnsupportedOperationException();
+    public long tempsOccupationMax() {
+        return 30*24*60*60;
     }
 }
