@@ -16,5 +16,9 @@ public class Main {
         System.out.println(hopital.removePatient(albert));
 
         System.out.println(hopital.getArchives());
+
+        System.out.println(hopital.getTauxOccupationLit(new LitAmbulatoire(0, null)));
+
+        System.out.println(hopital);
     }
 }

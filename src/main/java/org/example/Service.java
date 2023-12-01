@@ -40,6 +40,14 @@ public class Service {
         return nbrLit;
     }
 
+    public int getNbrLitLibre() {
+        int nbr = 0;
+        for (Chambre c : chambres) {
+            nbr += c.getNbrLitLibre();
+        }
+        return nbr;
+    }
+
     public void addPatient(Patient p ) {
         boolean isAdded = false;
         for (Chambre c : chambres) {

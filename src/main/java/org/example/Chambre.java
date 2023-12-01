@@ -42,6 +42,16 @@ public class Chambre {
         return lits;
     }
 
+    public int getNbrLitLibre(){
+        int nbr = 0;
+        for (Lit l : lits) {
+            if (l.litIsEmplty()){
+                nbr++;
+            }
+        }
+        return nbr;
+    }
+
     public boolean havePlace() {
         for (Lit l : lits) {
             if (l.litIsEmplty()) {

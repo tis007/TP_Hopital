@@ -53,9 +53,10 @@ public class Hopital {
         for (Service s : services) {
             if (lit.getClass().getName().equals(s.getLitType().getClass().getName())) {
                 nbrLitTot += s.nbrLitTot();
+                nbrLitOccupe += s.getNbrLitLibre();
             }
         }
-        throw  new UnsupportedOperationException();
+        return (double) nbrLitOccupe /nbrLitTot;
     }
 
     public Hopital(ArrayList<Service> services) {
