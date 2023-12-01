@@ -18,4 +18,13 @@ public class Hopital {
     public Hopital(ArrayList<Service> services) {
         this.services = services;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder ret = new StringBuilder("Hopital \n");
+        for (Service s: services) {
+            ret.append(s).append("\n");
+        }
+           return ret.toString();
+    }
 }

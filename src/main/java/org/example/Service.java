@@ -37,4 +37,14 @@ public class Service {
     public int getNbrChambres() {
         return nbrChambres;
     }
+
+    @Override
+    public String toString() {
+        return
+                "\n     nomService='" + nomService +
+                "\n     numService=" + numService +
+                "\n     nbrChambres=" + nbrChambres +
+                "\n     chambres=" + chambres +
+                "\n     litType=" + litType;
+    }
 }
