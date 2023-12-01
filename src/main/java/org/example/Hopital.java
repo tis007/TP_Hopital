@@ -13,6 +13,18 @@ public class Hopital {
         return addPatient(p);
     }
 
+    public String getArchives() {
+        StringBuilder ret = new StringBuilder();
+        for (Service s : services) {
+            for (Chambre c : s.getChambres()){
+                for (Lit l : c.getLits()){
+                    ret.append(l.getHistoriquePatient()).append("\n");
+                }
+            }
+        }
+        return ret.toString();
+    }
+
     public boolean addPatient(Patient p) {
         for (Service s : services){
             if (s.getNumService() == p.getNumService()) {

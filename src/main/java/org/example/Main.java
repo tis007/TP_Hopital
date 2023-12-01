@@ -14,5 +14,7 @@ public class Main {
         hopital.addPatient(robert);
 
         System.out.println(hopital.removePatient(albert));
+
+        System.out.println(hopital.getArchives());
     }
 }

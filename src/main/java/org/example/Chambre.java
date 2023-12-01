@@ -38,6 +38,10 @@ public class Chambre {
         }
     }
 
+    public ArrayList<Lit> getLits() {
+        return lits;
+    }
+
     public boolean havePlace() {
         for (Lit l : lits) {
             if (l.litIsEmplty()) {

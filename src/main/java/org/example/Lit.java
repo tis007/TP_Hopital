@@ -61,6 +61,10 @@ public abstract class Lit {
         return result;
     }
 
+    public ArrayList<Patient> getHistoriquePatient() {
+        return historiquePatient;
+    }
+
     @Override
     public String toString() {
         return "Lit{" +
