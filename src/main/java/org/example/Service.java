@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Service {
@@ -88,5 +89,12 @@ public class Service {
             ret.append("\n          ").append(c);
         }
         return ret.toString();
+    }
+    public ArrayList<Lit> listTempsDepasse(){
+        ArrayList<Lit> listLitTempsDepasse = new ArrayList<Lit>();
+        for(Chambre c : chambres){
+            listLitTempsDepasse.addAll(c.tempsDepasse());
+        }
+        return listLitTempsDepasse;
     }
 }

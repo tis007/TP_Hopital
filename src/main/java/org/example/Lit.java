@@ -7,6 +7,7 @@ import java.util.Date;
 
 public abstract class Lit {
     private int tarifJour;
+    private ArrayList<Lit> litsTempsDepasse = new ArrayList<Lit>();
     private Chambre chambre;
     private Patient patient;
     private ArrayList<Patient> historiquePatient = new ArrayList<Patient>();
@@ -71,5 +72,6 @@ public abstract class Lit {
                 "patient=" + patient +
                 '}';
     }
+
 }
 

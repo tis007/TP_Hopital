@@ -67,4 +67,13 @@ public class Chambre {
                 ", lits=" + lits +
                 '}';
     }
+    public ArrayList<Lit> tempsDepasse(){
+        ArrayList<Lit> litTempDepasse = new ArrayList<Lit>();
+        for (Lit l : lits){
+            if (!l.tempsDepasser()){
+                litTempDepasse.add(l);
+            }
+        }
+        return litTempDepasse;
+    }
 }
